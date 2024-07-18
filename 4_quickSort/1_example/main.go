@@ -16,7 +16,7 @@ func main() {
 	start := time.Now()
 	emptyArr = quickSort(emptyArr)
 	duration := time.Since(start)
-	fmt.Println("Быстрая сортировка O(n * log n) занимает:", duration) // квадратичная сложность
+	fmt.Println("Быстрая сортировка O(n * log n) занимает:", duration) // log
 	fmt.Println(emptyArr[:7])
 
 }
