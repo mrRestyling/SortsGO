@@ -6,8 +6,8 @@ import (
 )
 
 func main() {
-	// noSort := RandomInt() // срез int
-	noSort := []int{3, 1, 5, 6, 2, 4, 7, 8}
+	noSort := RandomInt() // срез int
+	// noSort := []int{3, 1, 5, 6, 2, 4, 7, 8}
 	fmt.Printf("Unsorted list:\t%v\n", noSort)
 	sorted := sort(noSort)
 	fmt.Println("")

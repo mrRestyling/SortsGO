@@ -13,9 +13,7 @@ func main() {
 
 	emptyArr := make([]int, len(arr))
 	copy(emptyArr, arr)
-	// fmt.Println(emptyArr)
 	start := time.Now()
-	// sort.Ints(emptyArr)
 	emptyArr = mergeSort(emptyArr)
 	duration := time.Since(start)
 	fmt.Println("Сортировка слиянием O(n * log n) занимает:", duration) // log
@@ -42,7 +40,6 @@ func mergeSort(arr []int) []int {
 
 	left := mergeSort(arr[:mid])
 	right := mergeSort(arr[mid:])
-	// fmt.Println(plus(left, right))
 
 	return plus(left, right)
 }
