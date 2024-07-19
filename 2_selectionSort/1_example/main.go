@@ -7,23 +7,33 @@ import (
 )
 
 func main() {
-	arr := createArr()
-	fmt.Println(arr[:10])
+
+	size := 100000
+
+	arr := makeArr(size)
+	// arr := []int{3, 5, 1, 6, 2, 7, 8}
+
+	fmt.Println()
+	fmt.Println("Сортировка выбором/двоичный поиск")
+	fmt.Println("Сложность: O(n^2) - квадратичная")
+	fmt.Println("Отрезок из первых семи чисел начального массива:", arr[:7])
 
 	emptyArr := make([]int, len(arr))
 	copy(emptyArr, arr)
 	start := time.Now()
 	selectionSort(emptyArr)
+	fmt.Println("Отрезок из первых семи чисел отсортированного массива:", emptyArr[:7])
 	duration := time.Since(start)
-	fmt.Println("Сортировка выбором/двоичный поиск O(n^2) занимает:", duration) // квадратичная сложность
-	fmt.Println(emptyArr[:10])
+
+	fmt.Printf("Время сортировки из %d чисел занимает: %v\n", size, duration)
+
 }
 
-func createArr() (arr []int) {
-	sizeArr := 50000
-	arr = make([]int, sizeArr)
-	for i := 0; i < sizeArr; i++ {
-		arr[i] = rand.Intn(sizeArr)
+func makeArr(vol int) (arr []int) {
+	size := vol
+	arr = make([]int, size)
+	for i := 0; i < size; i++ {
+		arr[i] = rand.Intn(size)
 	}
 	return
 }

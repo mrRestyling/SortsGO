@@ -8,12 +8,12 @@ import (
 var index, start, end int
 
 func main() {
-	arr := RandomInt() // срез int
-	fmt.Printf("Unsorted list:\t%v\n", arr)
+	arr := RandomInt()
+	fmt.Printf("Неотсортированный массив:\t%v\n", arr)
 	fmt.Println("")
 	sort(arr, 0, len(arr)-1)
 	fmt.Println("")
-	fmt.Printf("Sorted list:\t%v\n", arr)
+	fmt.Printf("Отсортированный массив:\t%v\n", arr)
 }
 
 func sort(s1 []int, start, end int) {
@@ -29,7 +29,7 @@ func sort(s1 []int, start, end int) {
 			s1[i], s1[j] = s1[j], s1[i]
 			i++
 		}
-		fmt.Printf("Sorting ...:\t%v\n", s1)
+		fmt.Printf("Сортировка ...:\t%v\n", s1)
 	}
 
 	s1[start], s1[i-1] = s1[i-1], s1[start]

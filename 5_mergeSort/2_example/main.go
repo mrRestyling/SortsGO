@@ -8,10 +8,10 @@ import (
 func main() {
 	noSort := RandomInt() // срез int
 	// noSort := []int{3, 1, 5, 6, 2, 4, 7, 8}
-	fmt.Printf("Unsorted list:\t%v\n", noSort)
+	fmt.Printf("Неотсортированный массив:\t%v\n", noSort)
 	sorted := sort(noSort)
 	fmt.Println("")
-	fmt.Printf("Sorted list:\t%v\n", sorted)
+	fmt.Printf("Отсортированный массив:\t%v\n", sorted)
 }
 
 func sort(m []int) []int {
@@ -35,20 +35,20 @@ func merge(left, right []int) []int {
 		if len(left) > 0 && len(right) > 0 {
 			if left[0] <= right[0] {
 				result = append(result, left[0])
-				fmt.Printf("Sorting:\t%v\n", result)
+				fmt.Printf("Процесс сортировки...:\t%v\n", result)
 				left = left[1:]
 			} else {
 				result = append(result, right[0])
-				fmt.Printf("Sorting:\t%v\n", result)
+				fmt.Printf("Процесс сортировки...:\t%v\n", result)
 				right = right[1:]
 			}
 		} else if len(left) > 0 {
 			result = append(result, left[0])
-			fmt.Printf("Sorting:\t%v\n", result)
+			fmt.Printf("Процесс сортировки...:\t%v\n", result)
 			left = left[1:]
 		} else if len(right) > 0 {
 			result = append(result, right[0])
-			fmt.Printf("Sorting:\t%v\n", result)
+			fmt.Printf("Процесс сортировки...:\t%v\n", result)
 			right = right[1:]
 		}
 	}

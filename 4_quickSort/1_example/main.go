@@ -7,25 +7,33 @@ import (
 )
 
 func main() {
-	arr := createArr()
+
+	size := 100000
+
+	arr := makeArr(size)
 	// arr := []int{3, 5, 1, 6, 2, 7, 8}
-	fmt.Println(arr[:7])
+
+	fmt.Println()
+	fmt.Println("Быстрая сортировка")
+	fmt.Println("Сложность: O(n * log n) - логарифмическая")
+	fmt.Println("Отрезок из первых семи чисел начального массива:", arr[:7])
 
 	emptyArr := make([]int, len(arr))
 	copy(emptyArr, arr)
 	start := time.Now()
 	emptyArr = quickSort(emptyArr)
+	fmt.Println("Отрезок из первых семи чисел отсортированного массива:", emptyArr[:7])
 	duration := time.Since(start)
-	fmt.Println("Быстрая сортировка O(n * log n) занимает:", duration) // log
-	fmt.Println(emptyArr[:7])
+
+	fmt.Printf("Время сортировки из %d чисел занимает: %v\n", size, duration)
 
 }
 
-func createArr() (arr []int) {
-	sizeArr := 50000
-	arr = make([]int, sizeArr)
-	for i := 0; i < sizeArr; i++ {
-		arr[i] = rand.Intn(sizeArr)
+func makeArr(vol int) (arr []int) {
+	size := vol
+	arr = make([]int, size)
+	for i := 0; i < size; i++ {
+		arr[i] = rand.Intn(size)
 	}
 	return
 }
