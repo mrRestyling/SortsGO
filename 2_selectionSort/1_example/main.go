@@ -11,7 +11,7 @@ func main() {
 	size := 100000
 
 	arr := makeArr(size)
-	// arr := []int{3, 5, 1, 6, 2, 7, 8}
+	// arr := []int{3, 5, 1, 6, 2, 7, 6}
 
 	fmt.Println()
 	fmt.Println("Сортировка выбором/двоичный поиск")
