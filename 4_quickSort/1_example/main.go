@@ -30,10 +30,10 @@ func main() {
 }
 
 func makeArr(vol int) (arr []int) {
-	size := vol
-	arr = make([]int, size)
-	for i := 0; i < size; i++ {
-		arr[i] = rand.Intn(size)
+	// size := vol
+	arr = make([]int, vol)
+	for i := 0; i < vol; i++ {
+		arr[i] = rand.Intn(vol)
 	}
 	return
 }
